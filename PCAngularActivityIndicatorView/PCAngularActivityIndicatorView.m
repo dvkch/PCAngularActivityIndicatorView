@@ -164,6 +164,15 @@
     }];
 }
 
+- (void)stopAnimatingImmediately
+{
+    self.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+    self.contentView.alpha = 1.0;
+    
+    self.shapeLayer.hidden = self.hidesWhenStopped;
+    [self.shapeLayer removeAllAnimations];
+}
+
 - (void)setColor:(UIColor *)color
 {
     [self willChangeValueForKey:@"color"];

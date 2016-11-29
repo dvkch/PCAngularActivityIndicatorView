@@ -79,8 +79,13 @@ typedef NS_ENUM(NSInteger, PCAngularActivityIndicatorViewStyle) {
 - (void)startAnimating;
 
 /**
- Stops the animation of the progress indicator.
+ Stops the animation of the progress indicator using a fade out animation.
  */
 - (void)stopAnimating;
+
+/**
+ Stops the animation of the progress indicator immediately.
+ */
+- (void)stopAnimatingImmediately;
 
 @end
