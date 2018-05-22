@@ -137,8 +137,9 @@
     rotationAnimation.duration = self.duration * 1.5;
     rotationAnimation.repeatCount = INFINITY;
     
-    [self.shapeLayer addAnimation:rotationAnimation forKey:nil];
-    [self.shapeLayer addAnimation:groupAnimation forKey:nil];
+    // somehow we need the keys to be non-nil or after stopping the loading it might never restart
+    [self.shapeLayer addAnimation:rotationAnimation forKey:@"PCRotationAnimation"];
+    [self.shapeLayer addAnimation:groupAnimation forKey:@"PCGroupAnimation"];
     
     self.shapeLayer.hidden = NO;
 }
