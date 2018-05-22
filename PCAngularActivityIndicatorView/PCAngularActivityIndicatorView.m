@@ -166,6 +166,8 @@
 
 - (void)stopAnimatingImmediately
 {
+    _animating = NO;
+    
     self.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0);
     self.contentView.alpha = 1.0;
     
